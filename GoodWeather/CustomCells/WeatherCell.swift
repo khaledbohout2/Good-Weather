@@ -17,6 +17,11 @@ class WeatherCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureCell(_ weatherVM:weatherViewModel)  {
+        self.cityNameLbl.text = "\(weatherVM.name.value)"
+        self.tempLbl?.text = "\(weatherVM.currentTemperature.temperature.value.formatAsDegree)"
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
